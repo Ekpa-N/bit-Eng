@@ -4,20 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start":"node index.js",
     "build": "webpack serve --mode production",
     "dev": "webpack",
     "serve": "webpack serve --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel": "vercel"
+  },
+  "engines": {
+    "node": "14.17.3",
+    "npm":"6.14.13"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "path-browserify": "^1.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "vercel": "^24.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
