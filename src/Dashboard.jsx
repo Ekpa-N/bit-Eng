@@ -3,7 +3,7 @@ import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import ActiveList from './ActiveList.jsx';
 
 
-export default function Dashboard({activeUsers, setActiveUsers, onLogout, setIdler}) {
+export default function Dashboard({activeUsers, setActiveUsers, onLogout, setIdler, logNew}) {
     const { username } = useParams()
     const navigate = useNavigate()
     const[status, setStatus] = useState(activeUsers)
@@ -62,7 +62,9 @@ export default function Dashboard({activeUsers, setActiveUsers, onLogout, setIdl
                 width: '200px',
                 justifyContent: 'space-between'
             }}>
-            <button>Sign-in different user</button>
+            <button 
+            onClick={logNew}>
+                Sign-in different user</button>
              <button 
              onClick={()=>{onLogout(username,"self")}}
              >Logout</button>

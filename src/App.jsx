@@ -105,7 +105,7 @@ export default function App() {
 
         if(localStorage.activeUsers) {
           if(activeUsers.find(user => user.name == thisUser.name)) {
-            setAlert("This user is already logged in")           
+            setAlert("This user is already logged in")          
             return
           }
           let newActiveList = JSON.parse(localStorage.activeUsers)
@@ -119,6 +119,12 @@ export default function App() {
             },50)
             return      
         }
+      }
+
+      const logNew=()=> {
+        console.log(window.location.origin)
+        let newTab = window.location.origin
+        window.open(newTab, "_blank")
       }
 //////////////////////////////////////////////////////////////////////////////
     
@@ -173,6 +179,7 @@ export default function App() {
         setActiveUsers={setActiveUsers}
         onLogout={onLogout}
         setIdler = {setIdler}
+        logNew={logNew}
         />}></Route>       
       </Route>
       </Routes>
